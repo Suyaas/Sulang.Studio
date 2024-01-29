@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Suyaa" Version="1.8.2401.37" />
+    <PackageReference Include="Suyaa.Data" Version="1.10.2401.58" />
+    <PackageReference Include="Suyaa.Data.Sqlite" Version="1.10.2401.58" />
+  </ItemGroup>
+
+</Project>

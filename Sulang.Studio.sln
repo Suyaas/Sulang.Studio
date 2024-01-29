@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sulang.Wpf.Studio", "Sulang.Wpf.Studio\Sulang.Wpf.Studio.csproj", "{5ABA040B-ECEF-486E-A75A-87D88CDA985B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{9BDC6205-CFC9-4FD4-9C41-1F5336C1074D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{44920072-2308-4FC7-B08C-CB4E22B53C69}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sulang.Infrastructure", "infrastructure\Sulang.Infrastructure\Sulang.Infrastructure.csproj", "{A46957BB-9030-4566-9FC1-3B51C2B0E813}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sulang.Wpf.Images", "common\Sulang.Wpf.Images\Sulang.Wpf.Images.csproj", "{6A66C86C-E1AA-42D4-AC06-7A1EF9EAAA91}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sulang.Wpf.Controls", "common\Sulang.Wpf.Controls\Sulang.Wpf.Controls.csproj", "{6B295E0D-6979-4999-BC0A-42BF6AAF39D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5ABA040B-ECEF-486E-A75A-87D88CDA985B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ABA040B-ECEF-486E-A75A-87D88CDA985B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ABA040B-ECEF-486E-A75A-87D88CDA985B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ABA040B-ECEF-486E-A75A-87D88CDA985B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A46957BB-9030-4566-9FC1-3B51C2B0E813}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A46957BB-9030-4566-9FC1-3B51C2B0E813}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A46957BB-9030-4566-9FC1-3B51C2B0E813}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A46957BB-9030-4566-9FC1-3B51C2B0E813}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A66C86C-E1AA-42D4-AC06-7A1EF9EAAA91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A66C86C-E1AA-42D4-AC06-7A1EF9EAAA91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A66C86C-E1AA-42D4-AC06-7A1EF9EAAA91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A66C86C-E1AA-42D4-AC06-7A1EF9EAAA91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B295E0D-6979-4999-BC0A-42BF6AAF39D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B295E0D-6979-4999-BC0A-42BF6AAF39D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B295E0D-6979-4999-BC0A-42BF6AAF39D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B295E0D-6979-4999-BC0A-42BF6AAF39D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A46957BB-9030-4566-9FC1-3B51C2B0E813} = {9BDC6205-CFC9-4FD4-9C41-1F5336C1074D}
+		{6A66C86C-E1AA-42D4-AC06-7A1EF9EAAA91} = {44920072-2308-4FC7-B08C-CB4E22B53C69}
+		{6B295E0D-6979-4999-BC0A-42BF6AAF39D6} = {44920072-2308-4FC7-B08C-CB4E22B53C69}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3DBBE5CC-57A3-4D99-9EEA-49C8D9DB94EC}
+	EndGlobalSection
+EndGlobal
