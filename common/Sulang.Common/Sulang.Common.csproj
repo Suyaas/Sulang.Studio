@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\infrastructure\Sulang.Infrastructure\Sulang.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\infrastructure\Sulang.Native.Win32\Sulang.Native.Win32.csproj" />
+  </ItemGroup>
+
+</Project>

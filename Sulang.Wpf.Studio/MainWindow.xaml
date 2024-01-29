@@ -3,10 +3,106 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="clr-namespace:Microsoft.Xaml.Behaviors;assembly=Microsoft.Xaml.Behaviors"
+        xmlns:cl="clr-namespace:Sulang.Wpf.Controls;assembly=Sulang.Wpf.Controls"
+        xmlns:cg="clr-namespace:Sulang.Studio.Dialogs"
+        xmlns:cm="clr-namespace:Sulang.Studio.Menus"
+        xmlns:vm="clr-namespace:Sulang.Modules.Kernel.View.MainWindow;assembly=Sulang.Modules.Kernel.View"
         xmlns:local="clr-namespace:Sulang.Wpf.Studio"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+        Height="720" Width="1280"
+        Title="{Binding ElementName=page, Path=DataContext.Data.WindowText}" 
+        x:Name="win" Icon="{StaticResource img_icon}" WindowStartupLocation="CenterScreen">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0"></WindowChrome>
+    </WindowChrome.WindowChrome>
+    <Window.Resources>
+        <vm:MainWindowViewModel x:Key="viewModel"></vm:MainWindowViewModel>
+    </Window.Resources>
+    <Grid x:Name="page" DataContext="{StaticResource viewModel}" Background="{StaticResource defBackgroundBrush}">
+        <DockPanel LastChildFill="True">
+            <!--标题栏-->
+            <DockPanel DockPanel.Dock="Top" LastChildFill="True" Margin="0,4,0,4">
+                <!--图标-->
+                <Image Source="{Binding ElementName=win, Path=Icon}" Margin="8,2,0,2" Height="24" DockPanel.Dock="Left" RenderOptions.BitmapScalingMode="HighQuality">
+                </Image>
+                <!--菜单栏-->
+                <cm:MainMenu Command="{Binding Service.OnMenuCommand}" DockPanel.Dock="Left"></cm:MainMenu>
+                <!--控制按钮-->
+                <StackPanel DockPanel.Dock="Right" Margin="4,4,8,4" Orientation="Horizontal">
+                    <cl:IconButton Margin="6,0,0,0" Width="18" Height="18" 
+                               Image="{StaticResource img_min}" ImageHover="{StaticResource img_min_hover}"
+                               Command="{Binding Service.OnWindowMinCommand}">
+                    </cl:IconButton>
+                    <Grid>
+                        <cl:IconButton Margin="6,0,0,0" Width="18" Height="18" 
+                                   Image="{StaticResource img_normal}" ImageHover="{StaticResource img_normal_hover}"
+                                   Command="{Binding Service.OnWindowNormalCommand}" Visibility="{Binding Data.NormalButtonVisibility}">
+                        </cl:IconButton>
+                        <cl:IconButton Margin="6,0,0,0" Width="18" Height="18" 
+                                   Image="{StaticResource img_max}" ImageHover="{StaticResource img_max_hover}"
+                                   Command="{Binding Service.OnWindowMaxCommand}" Visibility="{Binding Data.MaxButtonVisibility}">
+                        </cl:IconButton>
+                    </Grid>
+                    <cl:IconButton Margin="6,0,0,0" Width="18" Height="18" 
+                               Image="{StaticResource img_close}" ImageHover="{StaticResource img_close_hover}"
+                               Command="{Binding Service.OnWindowCloseCommand}">
+                    </cl:IconButton>
+                </StackPanel>
+                <!--标题空白-->
+                <Border x:Name="header" Background="{StaticResource defBackgroundBrush}" MouseDown="header_MouseDown" Padding="4,0,4,0">
+                    <StackPanel Orientation="Horizontal">
+                        <!--<Rectangle Fill="{StaticResource defBorderBrush}" Width="1" Margin="0,4,0,4"></Rectangle>-->
+                        <TextBlock Margin="8,0,0,0" Text="{Binding Data.WindowText}" Foreground="{StaticResource defTextBrush}" VerticalAlignment="Center"></TextBlock>
+                    </StackPanel>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseUp">
+                            <i:InvokeCommandAction Command="{Binding Service.OnWindowHeaderMouseUpCommand}"></i:InvokeCommandAction>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Border>
+            </DockPanel>
+            <!--状态栏-->
+            <Border DockPanel.Dock="Bottom" Background="{StaticResource lightBackgroundBrush}" Padding="8,4">
+                <TextBlock Text="{Binding Data.Status}" Foreground="{StaticResource lightTextBrush}"></TextBlock>
+            </Border>
+            <!--操作区-->
+            <TabControl Margin="0,0,0,0" BorderThickness="0" ItemsSource="{Binding Data.Pages}" SelectedIndex="{Binding Data.PageIndex, Mode=TwoWay}">
+                <TabControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock x:Name="header" Margin="0,0,6,0" Text="{Binding Header}" 
+                            VerticalAlignment="Center" HorizontalAlignment="Left" 
+                            MaxWidth="150"
+                            Foreground="{StaticResource lightTextBrush}" FontSize="12">
+                            </TextBlock>
+                            <cl:IconButton x:Name="imgClose" Margin="0,0,4,0" Width="8" Height="8"
+                            Image="{StaticResource img_close_simple}" ImageHover="{StaticResource img_close_simple_hover}"
+                            Command="{Binding ElementName=page, Path=DataContext.Service.OnPageCloseCommand}" CommandParameter="{Binding Name}">
+                            </cl:IconButton>
+                        </StackPanel>
+                        <DataTemplate.Triggers>
+                            <DataTrigger Binding="{Binding Closable}" Value="False">
+                                <Setter TargetName="imgClose" Property="Visibility" Value="Hidden"></Setter>
+                                <Setter TargetName="imgClose" Property="Width" Value="0"></Setter>
+                            </DataTrigger>
+                        </DataTemplate.Triggers>
+                    </DataTemplate>
+                </TabControl.ItemTemplate>
+                <TabControl.ContentTemplate>
+                    <DataTemplate>
+                        <ContentControl Content="{Binding Content}"></ContentControl>
+                    </DataTemplate>
+                </TabControl.ContentTemplate>
+            </TabControl>
+        </DockPanel>
+        <!--关于-->
+        <!--<cl:ContentDialog Title="关于 ..." Visibility="{Binding Data.AboutDialogVisibility, Mode=TwoWay}">
+            <cg:About></cg:About>
+        </cl:ContentDialog>-->
+        <!--代码框-->
+        <!--<cl:ContentDialog Title="{Binding Data.CodeDialogTitle}" Visibility="{Binding Data.CodeDialogVisibility, Mode=TwoWay}" Width="800" Height="500">
+            <TextBox IsReadOnly="True" Text="{Binding Data.CodeDialogText}" VerticalScrollBarVisibility="Auto" TextWrapping="WrapWithOverflow"></TextBox>
+        </cl:ContentDialog>-->
     </Grid>
 </Window>

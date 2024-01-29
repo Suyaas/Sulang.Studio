@@ -8,9 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Sulang.Wpf.Common\Sulang.Wpf.Common.csproj" />
-    <ProjectReference Include="..\Sulang.Wpf.Images\Sulang.Wpf.Images.csproj" />
-    <ProjectReference Include="..\Sulang.Wpf.Themes\Sulang.Wpf.Themes.csproj" />
+    <ProjectReference Include="..\..\infrastructure\Sulang.Wpf.Infrastructure\Sulang.Wpf.Infrastructure.csproj" />
+    <ProjectReference Include="..\Sulang.Common\Sulang.Common.csproj" />
   </ItemGroup>
 
 </Project>

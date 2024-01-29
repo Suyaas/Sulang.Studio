@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+    <RectangleGeometry x:Key="img_fiil_all_rect" Rect="0.0,0.0,1024.0,1024.0"/>
+
+    <PathGeometry x:Key="img_fiil_all_path" Figures="m 185.387 426.982 h 192 c 0 -235.648 191.019 -426.667 426.667 -426.667 c 11.648 0 23.168 0.426667 34.56 1.36533 A 384.128 384.128 0 0 0 633.6 328.294 l -0.21333 13.3547 v 85.3333 h 192 l -320 341.333 z m 0 256 h 116.779 l 203.221 216.747 l 203.136 -216.704 l 116.864 -0.0427 l -320 341.333 z" FillRule="Nonzero"/>
+
+    <DrawingImage x:Key="img_fiil_all" RenderOptions.BitmapScalingMode="LowQuality" RenderOptions.EdgeMode="Unspecified">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="{StaticResource img_fiil_all_rect}" RenderOptions.EdgeMode="Unspecified" RenderOptions.BitmapScalingMode="LowQuality">
+                <GeometryDrawing Brush="{StaticResource highlightBroderBrush}" Geometry="{StaticResource img_fiil_all_path}" RenderOptions.EdgeMode="Unspecified" RenderOptions.BitmapScalingMode="LowQuality"></GeometryDrawing>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="img_fiil_all_hover" RenderOptions.BitmapScalingMode="HighQuality">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="{StaticResource img_fiil_all_rect}">
+                <GeometryDrawing Brush="{StaticResource lightTextBrush}" Geometry="{StaticResource img_fiil_all_path}"></GeometryDrawing>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+</ResourceDictionary>

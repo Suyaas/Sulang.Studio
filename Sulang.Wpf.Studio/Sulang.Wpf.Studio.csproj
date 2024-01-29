@@ -6,6 +6,25 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>code.ico</ApplicationIcon>
+    <Version>0.1.2401.2</Version>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="code.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="code.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\common\Sulang.Wpf.Controls\Sulang.Wpf.Controls.csproj" />
+    <ProjectReference Include="..\modules\kernel\Sulang.Modules.Kernel.View\Sulang.Modules.Kernel.View.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="code.png" />
+  </ItemGroup>
 
 </Project>

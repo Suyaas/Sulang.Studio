@@ -8,7 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Sulang.Wpf.Themes\Sulang.Wpf.Themes.csproj" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.77" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sulang.Infrastructure\Sulang.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

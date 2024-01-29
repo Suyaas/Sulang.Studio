@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+    <RectangleGeometry x:Key="img_icon_rect" Rect="0.0,0.0,264.0,264.0"/>
+
+    <PathGeometry x:Key="img_icon_path" Figures="M 90.6151 0 C 40.4146 1.00265e-14 4.01061e-14 40.4146 0 90.6151 L 0 173.968 C 1.00265e-14 224.169 40.4146 264.583 90.6151 264.583 L 173.968 264.583 C 224.169 264.583 264.583 224.169 264.583 173.968 L 264.583 90.6151 C 264.583 40.4146 224.169 4.01061e-14 173.968 0 L 90.6151 0 z M 74.951 74.0833 L 95.25 74.0833 L 52.049 132.292 L 95.25 190.5 L 74.951 190.5 L 31.75 132.292 L 74.951 74.0833 z M 169.333 74.0833 L 189.632 74.0833 L 232.833 132.292 L 189.632 190.5 L 169.333 190.5 L 212.534 132.292 L 169.333 74.0833 z M 143.41 94.4816 L 164.257 94.4816 L 121.173 170.102 L 100.327 170.102 L 143.41 94.4816 z" FillRule="Nonzero"/>
+
+    <DrawingImage x:Key="img_icon" RenderOptions.BitmapScalingMode="HighQuality">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="{StaticResource img_icon_rect}" RenderOptions.BitmapScalingMode="LowQuality">
+                <GeometryDrawing Brush="#ebebeb" Geometry="{StaticResource img_icon_path}"></GeometryDrawing>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+</ResourceDictionary>

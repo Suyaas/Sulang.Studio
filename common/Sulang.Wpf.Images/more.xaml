@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+    <RectangleGeometry x:Key="img_more_rect" Rect="0.0,0.0,1024.0,1024.0"/>
+
+    <PathGeometry x:Key="img_more_path" Figures="M 749.6 466.4 l -384 -384 l -91.2 91.2 L 613.6 512 l -339.2 338.4 l 91.2 91.2 l 384 -384 l 44.8 -45.6 z" FillRule="Nonzero"/>
+
+    <DrawingImage x:Key="img_more" RenderOptions.BitmapScalingMode="LowQuality" RenderOptions.EdgeMode="Unspecified">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="{StaticResource img_more_rect}" RenderOptions.EdgeMode="Unspecified" RenderOptions.BitmapScalingMode="LowQuality">
+                <GeometryDrawing Brush="{StaticResource defTextBrush}" Geometry="{StaticResource img_more_path}" RenderOptions.EdgeMode="Unspecified" RenderOptions.BitmapScalingMode="LowQuality"></GeometryDrawing>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="img_more_hover" RenderOptions.BitmapScalingMode="HighQuality">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="{StaticResource img_more_rect}">
+                <GeometryDrawing Brush="#f9523c" Geometry="{StaticResource img_more_path}"></GeometryDrawing>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+</ResourceDictionary>

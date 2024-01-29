@@ -1,7 +1,8 @@
-﻿namespace Sulang.Infrastructure
+
+namespace Sulang.Wpf.Common
 {
     public class Class1
     {
-
     }
+
 }

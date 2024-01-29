@@ -1,8 +1,7 @@
-
-namespace Sulang.Wpf.Images
+﻿namespace Sulang.Common
 {
     public class Class1
     {
-    }
 
+    }
 }

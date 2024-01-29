@@ -10,6 +10,11 @@
     <PackageReference Include="Suyaa" Version="1.8.2401.37" />
     <PackageReference Include="Suyaa.Data" Version="1.10.2401.58" />
     <PackageReference Include="Suyaa.Data.Sqlite" Version="1.10.2401.58" />
+    <PackageReference Include="Suyaa.IocContainer" Version="1.8.2401.37" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sulang.Native.Win32\Sulang.Native.Win32.csproj" />
   </ItemGroup>
 
 </Project>

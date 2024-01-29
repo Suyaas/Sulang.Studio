@@ -4,6 +4,30 @@
              xmlns:local="clr-namespace:Sulang.Wpf.Studio"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--加载所有的颜色设定-->
+                <ResourceDictionary Source="pack://application:,,,/Sulang.Wpf.Themes;component/DarkColors.xaml"></ResourceDictionary>
+                <!--加载所有的图像设定-->
+                <ResourceDictionary Source="pack://application:,,,/Sulang.Wpf.Images;component/refresh.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/Sulang.Wpf.Images;component/setting.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/Sulang.Wpf.Images;component/fill-all.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/Sulang.Wpf.Images;component/column.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/Sulang.Wpf.Images;component/close.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/Sulang.Wpf.Images;component/close_simple.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/Sulang.Wpf.Images;component/max.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/Sulang.Wpf.Images;component/normal.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/Sulang.Wpf.Images;component/min.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/Sulang.Wpf.Images;component/search.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/Sulang.Wpf.Images;component/more.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/Sulang.Wpf.Images;component/icon.xaml"></ResourceDictionary>
+                <!--加载所有的控件样式-->
+                <ResourceDictionary Source="pack://application:,,,/Sulang.Wpf.Controls;component/TabControl.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/Sulang.Wpf.Controls;component/IconButton.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/Sulang.Wpf.Controls;component/ScrollBar.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/Sulang.Wpf.Controls;component/DataGrid.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/Sulang.Wpf.Controls;component/Menu.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

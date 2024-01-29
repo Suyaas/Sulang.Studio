@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+  
+    <RectangleGeometry x:Key="img_refresh_rect" Rect="0.0,0.0,68.266667,68.266667"/>
+
+    <PathGeometry x:Key="refresh_path" Figures="m 36.1412 0 c 18.1107 0 32.1255 12.0471 32.1255 32.1255 h -8.03138 c 0 -12.0471 -8.57349 -24.0941 -24.0941 -24.0941 c -9.36458 0 -16.0628 2.00785 -22.0863 8.03138 h 10.0392 v 8.03137 H 0 V 0 H 8.03137 V 10.0392 C 14.5528 2.2006 25.4313 0 36.1412 0 Z M 32.1255 68.2667 C 14.0147 68.2667 0 56.2196 0 36.1412 h 8.03137 c 0 12.0471 8.57349 24.0941 24.0941 24.0941 c 9.36458 0 16.0628 -2.00784 22.0863 -8.03137 H 44.1726 V 44.1726 H 68.2667 V 68.2667 H 60.2353 V 58.2274 c -6.52147 7.83862 -17.4 10.0392 -28.1098 10.0392 z" FillRule="Nonzero"/>
+
+    <ResourceDictionary x:Key="colors" Source="/Themes/Colors.xaml"></ResourceDictionary>
+    
+    <DrawingImage x:Key="img_refresh" RenderOptions.BitmapScalingMode="HighQuality">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="{StaticResource img_refresh_rect}">
+                <GeometryDrawing Brush="{StaticResource highlightBroderBrush}" Geometry="{StaticResource refresh_path}"></GeometryDrawing>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="img_refresh_hover" RenderOptions.BitmapScalingMode="HighQuality">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="{StaticResource img_refresh_rect}">
+                <GeometryDrawing Brush="{StaticResource lightTextBrush}" Geometry="{StaticResource refresh_path}"></GeometryDrawing>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    
+</ResourceDictionary>

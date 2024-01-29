@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+    <RectangleGeometry x:Key="img_settings_rect" Rect="0.0,0.0,20,20"/>
+
+    <PathGeometry x:Key="settings_path" Figures="m 8.42313 0 l 3.22551 0.00411763 c 1.00162 0.00176464 1.81344 0.791177 1.81465 1.76647 l 0.0012 0.511764 a 8.56065 8.33059 0 0 1 1.76387 0.964118 l 0.431599 -0.242353 a 1.81767 1.76882 0 0 1 2.47837 0.647059 l 1.61698 2.71588 a 1.81767 1.76882 0 0 1 -0.567607 2.36 l -0.09853 0.058823 l -0.433412 0.243529 a 8.46635 8.23882 0 0 1 -0.03204 2.02588 l 0.306471 0.172941 a 1.81767 1.76882 0 0 1 0.715704 2.32412 l -0.05017 0.09176 l -1.51483 2.55294 a 1.81767 1.76882 0 0 1 -2.3883 0.696471 l -0.0943 -0.04941 l -0.418905 -0.235294 a 8.47723 8.24941 0 0 1 -1.69315 0.918823 l 0.000616 0.701177 a 1.81767 1.76882 0 0 1 -1.70464 1.76765 L 11.6674 20 L 8.44126 19.9959 a 1.81767 1.76882 0 0 1 -1.81465 -1.76647 l -0.0012 -0.845295 A 8.59329 8.36235 0 0 1 5.20307 16.5629 L 4.43055 16.9959 A 1.81767 1.76882 0 0 1 1.95157 16.3488 L 0.334581 13.6329 a 1.81767 1.76882 0 0 1 0.568211 -2.36 L 1.00072 11.2141 L 1.78715 10.7729 C 1.7267 10.2141 1.72368 9.64706 1.78171 9.08118 L 0.908837 8.59059 A 1.81767 1.76882 0 0 1 0.192529 6.26647 L 0.243305 6.17471 L 1.75813 3.62176 A 1.81767 1.76882 0 0 1 4.14643 2.92529 l 0.094299 0.049412 l 0.761645 0.427647 A 8.46151 8.23412 0 0 1 6.60425 2.44412 l -0.0012 -0.672941 A 1.81767 1.76882 0 0 1 8.30767 0.00352939 Z m -0.00243 1.76882 l 0.00182 1.79706 l -1.04454 0.478824 C 6.93066 4.24882 6.50874 4.50118 6.11945 4.79647 L 5.1541 5.53 L 3.37753 4.53118 L 3.33159 4.50647 L 1.81737 7.05941 L 3.70758 8.12118 L 3.59031 9.25765 a 6.65533 6.47647 0 0 0 0.00423 1.32941 l 0.124523 1.14471 l -1.81163 1.01529 l 1.61638 2.71588 l 1.79893 -1.00706 l 0.95387 0.68 a 6.75809 6.57647 0 0 0 1.12131 0.647058 l 1.04273 0.477059 l 0.00363 1.96706 l 3.2249 0.0041 l -0.0018 -1.88235 l 1.12071 -0.454118 a 6.66016 6.48118 0 0 0 1.32986 -0.721764 l 0.953265 -0.667059 l 1.43564 0.80647 l 1.51362 -2.55294 l -1.36613 -0.769411 l 0.169255 -1.17941 a 6.64928 6.47059 0 0 0 0.02539 -1.59118 L 16.722 8.07353 L 18.1831 7.25294 L 16.5661 4.53706 L 15.1117 5.35294 L 14.1572 4.67529 A 6.7593 6.57765 0 0 0 12.7675 3.91529 l -1.11829 -0.451765 l -0.003 -1.69059 z M 12.0379 6.84529 A 3.63897 3.54118 0 0 1 13.369 11.6794 A 3.6299 3.53235 0 0 1 8.40619 12.9735 A 3.63897 3.54118 0 0 1 7.07573 8.13941 A 3.6299 3.53235 0 0 1 12.0385 6.84529 Z M 8.6498 9.02294 A 1.8219 1.77294 0 0 0 9.31593 11.4424 A 1.81284 1.76412 0 0 0 11.7943 10.7965 C 12.2785 9.97941 12.018 8.94294 11.2194 8.43118 l -0.09067 -0.054706 l -0.0943 -0.049412 A 1.81284 1.76412 0 0 0 8.6498 9.02294 Z" FillRule="Nonzero"/>
+
+    <DrawingImage x:Key="img_settings" RenderOptions.BitmapScalingMode="LowQuality" RenderOptions.EdgeMode="Unspecified">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="{StaticResource img_settings_rect}" RenderOptions.EdgeMode="Unspecified" RenderOptions.BitmapScalingMode="LowQuality">
+                <GeometryDrawing Brush="{StaticResource highlightBroderBrush}" Geometry="{StaticResource settings_path}" RenderOptions.EdgeMode="Unspecified" RenderOptions.BitmapScalingMode="LowQuality"></GeometryDrawing>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="img_settings_hover" RenderOptions.BitmapScalingMode="HighQuality">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="{StaticResource img_settings_rect}">
+                <GeometryDrawing Brush="{StaticResource lightTextBrush}" Geometry="{StaticResource settings_path}"></GeometryDrawing>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+</ResourceDictionary>

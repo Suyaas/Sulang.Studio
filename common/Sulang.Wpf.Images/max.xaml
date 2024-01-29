@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+    <RectangleGeometry x:Key="img_max_rect" Rect="0.0,0.0,1024.0,1024.0"/>
+
+    <PathGeometry x:Key="img_max_path" Figures="M 512 128 A 384 384 0 0 0 128 512 A 384 384 0 0 0 512 895.999 A 384 384 0 0 0 895.999 512 A 384 384 0 0 0 512 128 z M 307.2 341.333 L 716.799 341.333 L 716.799 682.666 L 307.2 682.666 L 307.2 341.333 z M 341.333 409.6 L 341.333 648.533 L 682.666 648.533 L 682.666 409.6 L 341.333 409.6 z" FillRule="Nonzero"/>
+
+    <DrawingImage x:Key="img_max" RenderOptions.BitmapScalingMode="LowQuality" RenderOptions.EdgeMode="Unspecified">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="{StaticResource img_max_rect}" RenderOptions.EdgeMode="Unspecified" RenderOptions.BitmapScalingMode="LowQuality">
+                <GeometryDrawing Brush="{StaticResource defTextBrush}" Geometry="{StaticResource img_max_path}" RenderOptions.EdgeMode="Unspecified" RenderOptions.BitmapScalingMode="LowQuality"></GeometryDrawing>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="img_max_hover" RenderOptions.BitmapScalingMode="HighQuality">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="{StaticResource img_max_rect}">
+                <GeometryDrawing Brush="{StaticResource lightTextBrush}" Geometry="{StaticResource img_max_path}"></GeometryDrawing>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+</ResourceDictionary>

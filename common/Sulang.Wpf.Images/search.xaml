@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+    <RectangleGeometry x:Key="img_search_rect" Rect="0.0,0.0,1024.0,1024.0"/>
+
+    <PathGeometry x:Key="img_search_path" Figures="M 448.847 63.2333 C 236.031 63.2333 62.8867 236.381 62.8867 449.187 C 62.8867 662 236.031 835.133 448.847 835.133 C 534.206 835.133 613.144 807.234 677.127 760.14 L 858.293 941.287 C 869.709 952.697 884.666 958.407 899.633 958.407 C 914.599 958.407 929.559 952.697 940.98 941.287 C 963.807 918.452 963.807 881.434 940.98 858.607 L 759.813 677.46 C 806.909 613.48 834.814 534.544 834.813 449.187 C 834.813 236.38 661.664 63.2333 448.847 63.2333 z M 448.847 158.233 C 609.283 158.233 739.814 288.757 739.813 449.187 C 739.813 609.617 609.283 740.133 448.847 740.133 C 288.413 740.133 157.893 609.617 157.893 449.187 C 157.893 288.757 288.413 158.233 448.847 158.233 z" FillRule="Nonzero"/>
+
+    <DrawingImage x:Key="img_search" RenderOptions.BitmapScalingMode="LowQuality" RenderOptions.EdgeMode="Unspecified">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="{StaticResource img_search_rect}" RenderOptions.EdgeMode="Unspecified" RenderOptions.BitmapScalingMode="LowQuality">
+                <GeometryDrawing Brush="{StaticResource defTextBrush}" Geometry="{StaticResource img_search_path}" RenderOptions.EdgeMode="Unspecified" RenderOptions.BitmapScalingMode="LowQuality"></GeometryDrawing>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="img_search_hover" RenderOptions.BitmapScalingMode="HighQuality">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="{StaticResource img_search_rect}">
+                <GeometryDrawing Brush="#f9523c" Geometry="{StaticResource img_search_path}"></GeometryDrawing>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+</ResourceDictionary>
