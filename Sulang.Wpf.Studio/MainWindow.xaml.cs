@@ -1,4 +1,5 @@
 ﻿using Sulang.Wpf.Controls;
+using Sulang.Wpf.Controls.Helpers;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,6 +23,7 @@ namespace Sulang.Wpf.Studio
         public MainWindow()
         {
             InitializeComponent();
+            this.RepairFullScreenBehavior();
             _windowMouseMove = new WindowMouseMove(this);
         }
 

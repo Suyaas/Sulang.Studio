@@ -10,9 +10,11 @@
         xmlns:vm="clr-namespace:Sulang.Modules.Kernel.View.MainWindow;assembly=Sulang.Modules.Kernel.View"
         xmlns:local="clr-namespace:Sulang.Wpf.Studio"
         mc:Ignorable="d"
-        Height="720" Width="1280"
+        Height="720" Width="1280" WindowStyle="None" BorderThickness="0"
         Title="{Binding ElementName=page, Path=DataContext.Data.WindowText}" 
-        x:Name="win" Icon="{StaticResource img_icon}" WindowStartupLocation="CenterScreen">
+        x:Name="win" Icon="{StaticResource img_icon}" WindowStartupLocation="CenterScreen"
+        BorderBrush="{StaticResource defBackgroundBrush}" Background="{StaticResource defBackgroundBrush}" 
+        WindowState="{Binding ElementName=page, Path=DataContext.Data.WindowState, Mode=TwoWay}">
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="0"></WindowChrome>
     </WindowChrome.WindowChrome>
