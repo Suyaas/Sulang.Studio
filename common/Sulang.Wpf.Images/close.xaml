@@ -8,7 +8,7 @@
     <DrawingImage x:Key="img_close" RenderOptions.BitmapScalingMode="HighQuality">
         <DrawingImage.Drawing>
             <DrawingGroup ClipGeometry="{StaticResource img_close_rect}" RenderOptions.BitmapScalingMode="LowQuality">
-                <GeometryDrawing Brush="#d81e06" Geometry="{StaticResource img_close_path}"></GeometryDrawing>
+                <GeometryDrawing Brush="#ff5a54" Geometry="{StaticResource img_close_path}"></GeometryDrawing>
             </DrawingGroup>
         </DrawingImage.Drawing>
     </DrawingImage>
@@ -16,7 +16,7 @@
     <DrawingImage x:Key="img_close_hover" RenderOptions.BitmapScalingMode="HighQuality">
         <DrawingImage.Drawing>
             <DrawingGroup ClipGeometry="{StaticResource img_close_rect}">
-                <GeometryDrawing Brush="#f9523c" Geometry="{StaticResource img_close_path}"></GeometryDrawing>
+                <GeometryDrawing Brush="#e14036" Geometry="{StaticResource img_close_path}"></GeometryDrawing>
             </DrawingGroup>
         </DrawingImage.Drawing>
     </DrawingImage>

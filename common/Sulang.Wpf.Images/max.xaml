@@ -8,7 +8,7 @@
     <DrawingImage x:Key="img_max" RenderOptions.BitmapScalingMode="LowQuality" RenderOptions.EdgeMode="Unspecified">
         <DrawingImage.Drawing>
             <DrawingGroup ClipGeometry="{StaticResource img_max_rect}" RenderOptions.EdgeMode="Unspecified" RenderOptions.BitmapScalingMode="LowQuality">
-                <GeometryDrawing Brush="{StaticResource defTextBrush}" Geometry="{StaticResource img_max_path}" RenderOptions.EdgeMode="Unspecified" RenderOptions.BitmapScalingMode="LowQuality"></GeometryDrawing>
+                <GeometryDrawing Brush="#ffbc29" Geometry="{StaticResource img_max_path}" RenderOptions.EdgeMode="Unspecified" RenderOptions.BitmapScalingMode="LowQuality"></GeometryDrawing>
             </DrawingGroup>
         </DrawingImage.Drawing>
     </DrawingImage>
@@ -16,7 +16,7 @@
     <DrawingImage x:Key="img_max_hover" RenderOptions.BitmapScalingMode="HighQuality">
         <DrawingImage.Drawing>
             <DrawingGroup ClipGeometry="{StaticResource img_max_rect}">
-                <GeometryDrawing Brush="{StaticResource lightTextBrush}" Geometry="{StaticResource img_max_path}"></GeometryDrawing>
+                <GeometryDrawing Brush="#e19e23" Geometry="{StaticResource img_max_path}"></GeometryDrawing>
             </DrawingGroup>
         </DrawingImage.Drawing>
     </DrawingImage>
