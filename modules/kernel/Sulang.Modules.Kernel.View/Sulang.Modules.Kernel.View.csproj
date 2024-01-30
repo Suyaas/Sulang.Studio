@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\common\Sulang.Wpf.Common\Sulang.Wpf.Common.csproj" />
+    <ProjectReference Include="..\Sulang.Modules.Kernel.Core\Sulang.Modules.Kernel.Core.csproj" />
   </ItemGroup>
 
 </Project>

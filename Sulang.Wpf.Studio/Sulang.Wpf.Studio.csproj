@@ -27,4 +27,8 @@
     <Resource Include="code.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\" />
+  </ItemGroup>
+
 </Project>
