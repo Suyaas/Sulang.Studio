@@ -7,7 +7,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>code.ico</ApplicationIcon>
-    <Version>0.1.2401.2</Version>
+    <Version>0.1.2402.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,10 +25,6 @@
 
   <ItemGroup>
     <Resource Include="code.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Pages\" />
   </ItemGroup>
 
 </Project>

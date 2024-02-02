@@ -41,17 +41,18 @@ namespace Sulang.Wpf.Controls
         // ¼ÆÊ±Æ÷
         private void timer_Tick(object? sender, EventArgs e)
         {
+            if (!GetAsyncKeyDown(Keys.LButton)) _isHeaderMouseDown = false;
             if (!_isHeaderMouseDown) return;
             _timer.Stop();
             var p = GetCurrentCursorPos();
             _window.Move((int)(p.X - _point.X + _left), (int)(p.Y - _point.Y + _top));
-            if (!GetAsyncKeyDown(Keys.LButton)) _isHeaderMouseDown = false;
             _timer.Start();
         }
 
         // ¼¤»î
         public void Active()
         {
+            if (_window.WindowState != WindowState.Normal) return;
             _isHeaderMouseDown = true;
             _left = _window.Left;
             _top = _window.Top;

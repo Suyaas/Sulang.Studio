@@ -1,0 +1,169 @@
+﻿<Page x:Class="Sulang.Modules.Kernel.View.Home.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Sulang.Modules.Kernel.View.Home"
+      xmlns:cl="clr-namespace:Sulang.Wpf.Controls;assembly=Sulang.Wpf.Controls"
+      xmlns:vm="clr-namespace:Sulang.Modules.Kernel.View.Home"
+      xmlns:i="clr-namespace:Microsoft.Xaml.Behaviors;assembly=Microsoft.Xaml.Behaviors"
+      xmlns:cds="clr-namespace:Sulang.Wpf.Common.Datas.TreeData;assembly=Sulang.Wpf.Common"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="HomePage">
+    <Page.Resources>
+        <vm:HomeViewModel x:Key="viewModel"></vm:HomeViewModel>
+        <ResourceDictionary x:Key="folder" Source="pack://application:,,,/Sulang.Wpf.Images;component/Codes/folder.xaml"></ResourceDictionary>
+    </Page.Resources>
+    <Grid x:Name="page" DataContext="{StaticResource viewModel}" Background="{StaticResource defBackgroundBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <!--类列表-->
+        <DockPanel LastChildFill="True">
+            <Grid DockPanel.Dock="Top" Margin="4,4,4,0">
+                <Border BorderThickness="1,1,1,0" BorderBrush="{StaticResource defBorderBrush}" Padding="2">
+                </Border>
+                <StackPanel Margin="1,1,1,0" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <!--目录-->
+                    <cl:IconButton Width="26" Height="26" Padding="4,5,0,5" BorderThickness="1" Margin="4,4,0,4" ToolTip="添加目录" 
+                        Image="{StaticResource img_codes_folder}" ImageHover="{StaticResource img_codes_folder_hover}" 
+                        Background="{StaticResource defBackgroundBrush}" BackgroundHover="{StaticResource highlightBackgroundBrush}" 
+                        BorderBrush="Transparent" BorderBrushHover="{StaticResource highlightBroderBrush}" 
+                        Command="{Binding Service.OnConnectSettingCommand}"></cl:IconButton>
+                    <!--代码-->
+                    <cl:IconButton Width="26" Height="26" Padding="4,7,0,7" BorderThickness="1" Margin="4,4,0,4" ToolTip="添加代码" 
+                        Image="{StaticResource img_codes_code}" ImageHover="{StaticResource img_codes_code_hover}" 
+                        Background="{StaticResource defBackgroundBrush}" BackgroundHover="{StaticResource highlightBackgroundBrush}" 
+                        BorderBrush="Transparent" BorderBrushHover="{StaticResource highlightBroderBrush}" 
+                        Command="{Binding Service.OnConnectSettingCommand}"></cl:IconButton>
+                    <Rectangle Width="1" Fill="{StaticResource defBorderBrush}" Margin="6,10,2,10"></Rectangle>
+                    <!--刷新-->
+                    <cl:IconButton Width="26" Height="26" Padding="5" BorderThickness="1" Margin="4,4,0,4" ToolTip="添加类"
+                        Image="{StaticResource img_refresh}" ImageHover="{StaticResource img_refresh_hover}" 
+                        Background="{StaticResource defBackgroundBrush}" BackgroundHover="{StaticResource highlightBackgroundBrush}" 
+                        BorderBrush="Transparent" BorderBrushHover="{StaticResource highlightBroderBrush}"  
+                        Command="{Binding Service.OnSchemaRefreshCommand}"></cl:IconButton>
+                    <Rectangle Width="1" Fill="{StaticResource defBorderBrush}" Margin="6,10,2,10"></Rectangle>
+                    <!--修改-->
+                    <cl:IconButton Width="26" Height="26" Padding="5" BorderThickness="1" Margin="4,4,0,4" ToolTip="修改"
+                        Image="{StaticResource img_edit}" ImageHover="{StaticResource img_edit_hover}" 
+                        Background="{StaticResource defBackgroundBrush}" BackgroundHover="{StaticResource highlightBackgroundBrush}" 
+                        BorderBrush="Transparent" BorderBrushHover="{StaticResource highlightBroderBrush}"  
+                        Command="{Binding Service.OnSchemaRefreshCommand}"></cl:IconButton>
+                    <!--删除-->
+                    <cl:IconButton Width="26" Height="26" Padding="5" BorderThickness="1" Margin="4,4,0,4" ToolTip="删除"
+                        Image="{StaticResource img_delete}" ImageHover="{StaticResource img_delete_hover}" 
+                        Background="{StaticResource defBackgroundBrush}" BackgroundHover="{StaticResource highlightBackgroundBrush}" 
+                        BorderBrush="Transparent" BorderBrushHover="{StaticResource highlightBroderBrush}"  
+                        Command="{Binding Service.OnSchemaRefreshCommand}"></cl:IconButton>
+                </StackPanel>
+            </Grid>
+            <TreeView BorderThickness="1" BorderBrush="{StaticResource defBorderBrush}" 
+                          Margin="4,0,4,4" Padding="2" 
+                          Background="{StaticResource defBackgroundBrush}" 
+                          ItemsSource="{Binding Data.TreeViewItems}"
+                          RenderOptions.EdgeMode="Aliased">
+                <TreeView.Resources>
+                    <!--ROOT-->
+                    <HierarchicalDataTemplate DataType="{x:Type cds:RootTreeViewItem}" ItemsSource="{Binding Items}">
+                        <Border x:Name="border" BorderThickness="1" BorderBrush="Transparent" Background="Transparent">
+                            <StackPanel Orientation="Horizontal" Margin="4" ToolTip="{Binding Description}">
+                                <Image x:Name="image" Width="16" Height="16" 
+                                       Source="{StaticResource img_codes_project}" RenderOptions.BitmapScalingMode="HighQuality"></Image>
+                                <TextBlock Text="{Binding Text}" Margin="2,0,0,0" Padding="2" Foreground="{StaticResource lightTextBrush}" />
+                            </StackPanel>
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseDown">
+                                    <i:InvokeCommandAction Command="{Binding ElementName=page, Path=DataContext.Service.OnTreeSelectedItemChangedCommand}" CommandParameter="{Binding Id}"></i:InvokeCommandAction>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Border>
+                        <HierarchicalDataTemplate.Triggers>
+                            <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource highlightBroderBrush}"></Setter>
+                                <Setter TargetName="border" Property="Background" Value="{StaticResource highlightBackgroundBrush}"></Setter>
+                            </DataTrigger>
+                        </HierarchicalDataTemplate.Triggers>
+                    </HierarchicalDataTemplate>
+                    <!--Schema-->
+                    <HierarchicalDataTemplate DataType="{x:Type cds:SchemaTreeViewItem}" ItemsSource="{Binding Items}">
+                        <Border x:Name="border" BorderThickness="1" BorderBrush="Transparent" Background="Transparent">
+                            <StackPanel Orientation="Horizontal" Margin="2" ToolTip="{Binding Description}">
+                                <Image x:Name="image" Width="16" Height="16" Source="/Images/schema.png" RenderOptions.BitmapScalingMode="HighQuality"></Image>
+                                <TextBlock Text="{Binding Text}" Margin="2,0,0,0" Padding="2" Foreground="{StaticResource lightTextBrush}" />
+                            </StackPanel>
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseDown">
+                                    <i:InvokeCommandAction Command="{Binding ElementName=page, Path=DataContext.Service.OnTreeSelectedItemChangedCommand}" CommandParameter="{Binding Id}"></i:InvokeCommandAction>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Border>
+                        <HierarchicalDataTemplate.Triggers>
+                            <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource highlightBroderBrush}"></Setter>
+                                <Setter TargetName="border" Property="Background" Value="{StaticResource highlightBackgroundBrush}"></Setter>
+                            </DataTrigger>
+                        </HierarchicalDataTemplate.Triggers>
+                    </HierarchicalDataTemplate>
+                    <!--Table-->
+                    <HierarchicalDataTemplate DataType="{x:Type cds:TableTreeViewItem}">
+                        <Border x:Name="border" BorderThickness="1" BorderBrush="Transparent" Background="Transparent">
+                            <StackPanel Orientation="Horizontal" Margin="2" ToolTip="{Binding Description}" ContextMenu="{StaticResource contextMenuTable}">
+                                <Image x:Name="image" Width="16" Height="16" Source="/Images/table.png" RenderOptions.BitmapScalingMode="HighQuality"></Image>
+                                <TextBlock Text="{Binding Text}" Margin="2,0,0,0" Padding="2" Foreground="{StaticResource lightTextBrush}" />
+                            </StackPanel>
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseDown">
+                                    <i:InvokeCommandAction Command="{Binding ElementName=page, Path=DataContext.Service.OnTreeSelectedItemChangedCommand}" CommandParameter="{Binding Id}"></i:InvokeCommandAction>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Border>
+                        <HierarchicalDataTemplate.Triggers>
+                            <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource highlightBroderBrush}"></Setter>
+                                <Setter TargetName="border" Property="Background" Value="{StaticResource highlightBackgroundBrush}"></Setter>
+                            </DataTrigger>
+                        </HierarchicalDataTemplate.Triggers>
+                    </HierarchicalDataTemplate>
+                </TreeView.Resources>
+                <TreeView.ItemContainerStyle>
+                    <Style TargetType="TreeViewItem">
+                        <Setter Property="Focusable" Value="False"></Setter>
+                    </Style>
+                </TreeView.ItemContainerStyle>
+            </TreeView>
+        </DockPanel>
+        <!--操作区-->
+        <TabControl Grid.Column="1" Margin="0,0,0,0" BorderThickness="0" ItemsSource="{Binding Data.Pages}" SelectedIndex="{Binding Data.PageIndex, Mode=TwoWay}">
+            <TabControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Name="header" Margin="0,0,6,0" Text="{Binding Header}" 
+                            VerticalAlignment="Center" HorizontalAlignment="Left" 
+                            MaxWidth="150"
+                            Foreground="{StaticResource lightTextBrush}" FontSize="12">
+                        </TextBlock>
+                        <cl:IconButton x:Name="imgClose" Margin="0,0,4,0" Width="8" Height="8"
+                            Image="{StaticResource img_close_simple}" ImageHover="{StaticResource img_close_simple_hover}"
+                            Command="{Binding ElementName=page, Path=DataContext.Service.OnPageCloseCommand}" CommandParameter="{Binding Name}">
+                        </cl:IconButton>
+                    </StackPanel>
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding Closable}" Value="False">
+                            <Setter TargetName="imgClose" Property="Visibility" Value="Hidden"></Setter>
+                            <Setter TargetName="imgClose" Property="Width" Value="0"></Setter>
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+            </TabControl.ItemTemplate>
+            <TabControl.ContentTemplate>
+                <DataTemplate>
+                    <ContentControl Content="{Binding Content}"></ContentControl>
+                </DataTemplate>
+            </TabControl.ContentTemplate>
+        </TabControl>
+        <GridSplitter Grid.Column="0" Width="4" Margin="0,2" Background="{StaticResource defBackgroundBrush}"></GridSplitter>
+    </Grid>
+</Page>

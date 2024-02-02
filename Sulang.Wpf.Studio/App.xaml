@@ -21,6 +21,11 @@
                 <ResourceDictionary Source="pack://application:,,,/Sulang.Wpf.Images;component/search.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="pack://application:,,,/Sulang.Wpf.Images;component/more.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="pack://application:,,,/Sulang.Wpf.Images;component/icon.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/Sulang.Wpf.Images;component/Common/edit.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/Sulang.Wpf.Images;component/Common/delete.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/Sulang.Wpf.Images;component/Codes/project.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/Sulang.Wpf.Images;component/Codes/folder.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/Sulang.Wpf.Images;component/Codes/code.xaml"></ResourceDictionary>
                 <!--加载所有的控件样式-->
                 <ResourceDictionary Source="pack://application:,,,/Sulang.Wpf.Controls;component/TabControl.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="pack://application:,,,/Sulang.Wpf.Controls;component/IconButton.xaml"></ResourceDictionary>

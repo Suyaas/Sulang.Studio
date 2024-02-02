@@ -68,35 +68,7 @@
             <Border DockPanel.Dock="Bottom" Background="{StaticResource lightBackgroundBrush}" Padding="8,4">
                 <TextBlock Text="{Binding Data.Status}" Foreground="{StaticResource lightTextBrush}"></TextBlock>
             </Border>
-            <!--操作区-->
-            <TabControl Margin="0,0,0,0" BorderThickness="0" ItemsSource="{Binding Data.Pages}" SelectedIndex="{Binding Data.PageIndex, Mode=TwoWay}">
-                <TabControl.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock x:Name="header" Margin="0,0,6,0" Text="{Binding Header}" 
-                            VerticalAlignment="Center" HorizontalAlignment="Left" 
-                            MaxWidth="150"
-                            Foreground="{StaticResource lightTextBrush}" FontSize="12">
-                            </TextBlock>
-                            <cl:IconButton x:Name="imgClose" Margin="0,0,4,0" Width="8" Height="8"
-                            Image="{StaticResource img_close_simple}" ImageHover="{StaticResource img_close_simple_hover}"
-                            Command="{Binding ElementName=page, Path=DataContext.Service.OnPageCloseCommand}" CommandParameter="{Binding Name}">
-                            </cl:IconButton>
-                        </StackPanel>
-                        <DataTemplate.Triggers>
-                            <DataTrigger Binding="{Binding Closable}" Value="False">
-                                <Setter TargetName="imgClose" Property="Visibility" Value="Hidden"></Setter>
-                                <Setter TargetName="imgClose" Property="Width" Value="0"></Setter>
-                            </DataTrigger>
-                        </DataTemplate.Triggers>
-                    </DataTemplate>
-                </TabControl.ItemTemplate>
-                <TabControl.ContentTemplate>
-                    <DataTemplate>
-                        <ContentControl Content="{Binding Content}"></ContentControl>
-                    </DataTemplate>
-                </TabControl.ContentTemplate>
-            </TabControl>
+            <Frame Source="pack://application:,,,/Sulang.Modules.Kernel.View;component/Home/HomePage.xaml"></Frame>
         </DockPanel>
         <!--关于-->
         <!--<cl:ContentDialog Title="关于 ..." Visibility="{Binding Data.AboutDialogVisibility, Mode=TwoWay}">

@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+    <RectangleGeometry x:Key="img_delete_rect" Rect="0.0,0.0,1024.0,1024.0"/>
+
+    <PathGeometry x:Key="img_delete_path" Figures="M 328.777 377.905 l 31.7196 449.658 h 310.662 l 31.6952 -449.658 h 73.2648 L 744.107 832.707 a 73.1429 73.1429 0 0 1 -72.9478 67.9985 H 360.497 a 73.1429 73.1429 0 0 1 -72.9478 -68.0229 L 255.488 377.905 h 73.2891 z m 159.208 22.6499 v 341.333 h -73.1429 v -341.333 h 73.1429 z m 133.73 0 v 341.333 h -73.1429 v -341.333 h 73.1429 z M 146.286 256 h 731.429 v 73.1429 H 146.286 v -73.1429 z m 518.266 -121.905 v 73.1429 h -292.571 v -73.1429 h 292.571 z" FillRule="Nonzero"/>
+
+    <DrawingImage x:Key="img_delete" RenderOptions.BitmapScalingMode="HighQuality">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="{StaticResource img_delete_rect}">
+                <GeometryDrawing Brush="#ff5a54" Geometry="{StaticResource img_delete_path}"></GeometryDrawing>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="img_delete_hover" RenderOptions.BitmapScalingMode="HighQuality">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="{StaticResource img_delete_rect}">
+                <GeometryDrawing Brush="{StaticResource lightTextBrush}" Geometry="{StaticResource img_delete_path}"></GeometryDrawing>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+</ResourceDictionary>

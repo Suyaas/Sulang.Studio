@@ -10,4 +10,8 @@
     <ProjectReference Include="..\..\..\common\Sulang.Common\Sulang.Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="MainWindow\" />
+  </ItemGroup>
+
 </Project>

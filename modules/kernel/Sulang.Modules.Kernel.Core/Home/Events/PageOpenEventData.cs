@@ -1,6 +1,6 @@
 ﻿using Sulang.Infrastructure.Events;
 
-namespace Sulang.Modules.Kernel.Core.MainWindow.Events
+namespace Sulang.Modules.Kernel.Core.Home.Events
 {
     /// <summary>
     /// 页面打开事件
