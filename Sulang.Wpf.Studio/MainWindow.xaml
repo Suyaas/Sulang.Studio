@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:i="clr-namespace:Microsoft.Xaml.Behaviors;assembly=Microsoft.Xaml.Behaviors"
         xmlns:cl="clr-namespace:Sulang.Wpf.Controls;assembly=Sulang.Wpf.Controls"
+        xmlns:clg="clr-namespace:Sulang.Wpf.Controls.Dialogs;assembly=Sulang.Wpf.Controls"
         xmlns:cg="clr-namespace:Sulang.Studio.Dialogs"
         xmlns:cm="clr-namespace:Sulang.Studio.Menus"
         xmlns:vm="clr-namespace:Sulang.Modules.Kernel.View.MainWindow;assembly=Sulang.Modules.Kernel.View"
@@ -71,9 +72,9 @@
             <Frame Source="pack://application:,,,/Sulang.Modules.Kernel.View;component/Home/HomePage.xaml"></Frame>
         </DockPanel>
         <!--关于-->
-        <!--<cl:ContentDialog Title="关于 ..." Visibility="{Binding Data.AboutDialogVisibility, Mode=TwoWay}">
+        <clg:ContentDialog Title="关于 ..." Visibility="{Binding Data.AboudDialog.Visibility, Mode=TwoWay}">
             <cg:About></cg:About>
-        </cl:ContentDialog>-->
+        </clg:ContentDialog>
         <!--代码框-->
         <!--<cl:ContentDialog Title="{Binding Data.CodeDialogTitle}" Visibility="{Binding Data.CodeDialogVisibility, Mode=TwoWay}" Width="800" Height="500">
             <TextBox IsReadOnly="True" Text="{Binding Data.CodeDialogText}" VerticalScrollBarVisibility="Auto" TextWrapping="WrapWithOverflow"></TextBox>

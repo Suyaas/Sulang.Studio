@@ -24,13 +24,13 @@ namespace Sulang.Infrastructure.Events.Dependency
         /// <param name="data"></param>
         Task TriggerAsync<T>(T data) where T : IEventData;
         /// <summary>
-        /// 触发
+        /// 订阅
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="handle"></param>
         void Subscribe<T>(Action<T> handle) where T : IEventData;
         /// <summary>
-        /// 触发
+        /// 订阅
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="handleAsync"></param>

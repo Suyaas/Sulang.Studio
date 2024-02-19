@@ -1,4 +1,5 @@
 ﻿using Sulang.Wpf.Common.Datas.TabData;
+using Sulang.Wpf.Common.Dialogs;
 using Sulang.Wpf.Infrastructure.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -18,9 +19,20 @@ namespace Sulang.Modules.Kernel.View.MainWindow
         /// <summary>
         /// 主窗口数据
         /// </summary>
-        public MainWindowData() {
+        public MainWindowData()
+        {
             Pages = [];
+            AboudDialog = new DialogData();
         }
+
+        #region 对话框
+
+        /// <summary>
+        /// 关于对话框
+        /// </summary>
+        public DialogData AboudDialog { get; }
+
+        #endregion
 
         #region 窗口
 

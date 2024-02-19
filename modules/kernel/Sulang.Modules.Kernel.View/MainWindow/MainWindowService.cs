@@ -1,10 +1,14 @@
-﻿using Sulang.Native.Win32;
+﻿using Sulang.Infrastructure.Events.Dependency;
+using Sulang.Modules.Kernel.Core.MainWindow.Events;
+using Sulang.Native.Win32;
 using Sulang.Wpf.Common.Commands;
+using Sulang.Wpf.Controls.Dialogs;
 using Sulang.Wpf.Infrastructure.ViewModels;
 using Suyaa;
 using Suyaa.Usables.Helpers;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -18,17 +22,38 @@ namespace Sulang.Modules.Kernel.View.MainWindow
     /// </summary>
     public sealed class MainWindowService : ViewModelService<MainWindowData>
     {
+        // 对话框
+        private readonly DialogService _aboutDialog;
+        private readonly IEventBus _eventBus;
+
         /// <summary>
         /// 主窗口服务
         /// </summary>
-        public MainWindowService() {
+        public MainWindowService(
+            IEventBus eventBus
+            )
+        {
             Data.WindowText = Use<Assembly>.Toy.GetProductFullName();
+            _aboutDialog = new DialogService(Data.AboudDialog);
+            _eventBus = eventBus;
+            _eventBus.Subscribe<AboutDialogOpenEventData>(d => _aboutDialog.Show());
         }
 
         /// <summary>
         /// 菜单命令
         /// </summary>
-        public RelayCommand OnMenuCommand => new(e => { });
+        public RelayCommand OnMenuCommand => new(e =>
+        {
+            switch (e.Name)
+            {
+                case "OnMenuAbout":
+                    _aboutDialog.Show();
+                    break;
+                default:
+                    Debug.WriteLine(e.Name);
+                    break;
+            }
+        });
 
         #region 系统按钮
 

@@ -26,6 +26,6 @@ namespace Sulang.Wpf.Infrastructure.ViewModels
         /// <summary>
         /// 数据
         /// </summary>
-        public TData Data { get; }
+        public TData Data { get; protected set; }
     }
 }
