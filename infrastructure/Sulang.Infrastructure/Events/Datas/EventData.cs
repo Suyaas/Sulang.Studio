@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Sulang.Infrastructure.Events.Dependency;
 
-namespace Sulang.Infrastructure.Events
+namespace Sulang.Infrastructure.Events.Datas
 {
     /// <summary>
     /// 事件数据

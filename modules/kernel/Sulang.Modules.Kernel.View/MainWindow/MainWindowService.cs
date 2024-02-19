@@ -6,13 +6,8 @@ using Sulang.Wpf.Controls.Dialogs;
 using Sulang.Wpf.Infrastructure.ViewModels;
 using Suyaa;
 using Suyaa.Usables.Helpers;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace Sulang.Modules.Kernel.View.MainWindow
@@ -25,6 +20,7 @@ namespace Sulang.Modules.Kernel.View.MainWindow
         // 对话框
         private readonly DialogService _aboutDialog;
         private readonly IEventBus _eventBus;
+        private AboutDialogPopEventData? _aboutDialogPopEventData = null;
 
         /// <summary>
         /// 主窗口服务
@@ -34,10 +30,22 @@ namespace Sulang.Modules.Kernel.View.MainWindow
             )
         {
             Data.WindowText = Use<Assembly>.Toy.GetProductFullName();
-            _aboutDialog = new DialogService(Data.AboudDialog);
+            _aboutDialog = new DialogService(Data.AboutDialog);
             _eventBus = eventBus;
-            _eventBus.Subscribe<AboutDialogOpenEventData>(d => _aboutDialog.Show());
+            _eventBus.Subscribe<AboutDialogPopEventData>(d =>
+            {
+                _aboutDialogPopEventData = d;
+                _aboutDialog.Show();
+            });
         }
+
+        /// <summary>
+        /// 关于对话框命令
+        /// </summary>
+        public RelayCommand OnAboutDialogCommand => new(e =>
+        {
+            _aboutDialogPopEventData?.Callback?.Invoke(e.Name == DialogCommands.Confirm);
+        });
 
         /// <summary>
         /// 菜单命令
@@ -47,7 +55,7 @@ namespace Sulang.Modules.Kernel.View.MainWindow
             switch (e.Name)
             {
                 case "OnMenuAbout":
-                    _aboutDialog.Show();
+                    _eventBus.Trigger(new AboutDialogPopEventData(null));
                     break;
                 default:
                     Debug.WriteLine(e.Name);

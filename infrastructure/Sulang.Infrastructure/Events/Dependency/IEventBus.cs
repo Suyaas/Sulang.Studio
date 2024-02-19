@@ -14,26 +14,26 @@ namespace Sulang.Infrastructure.Events.Dependency
         /// <summary>
         /// 触发
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="TData"></typeparam>
         /// <param name="data"></param>
-        void Trigger<T>(T data) where T : IEventData;
+        void Trigger<TData>(TData data) where TData : IEventData;
         /// <summary>
         /// 触发
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="TData"></typeparam>
         /// <param name="data"></param>
-        Task TriggerAsync<T>(T data) where T : IEventData;
+        Task TriggerAsync<TData>(TData data) where TData : IEventData;
         /// <summary>
         /// 订阅
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="TData"></typeparam>
         /// <param name="handle"></param>
-        void Subscribe<T>(Action<T> handle) where T : IEventData;
+        void Subscribe<TData>(Action<TData> handle) where TData : IEventData;
         /// <summary>
         /// 订阅
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="TData"></typeparam>
         /// <param name="handleAsync"></param>
-        void SubscribeAsync<T>(Func<T, Task> handleAsync) where T : IEventData;
+        void SubscribeAsync<TData>(Func<TData, Task> handleAsync) where TData : IEventData;
     }
 }

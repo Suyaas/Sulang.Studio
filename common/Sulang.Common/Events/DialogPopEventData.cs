@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sulang.Modules.Kernel.Core.MainWindow.Events
+namespace Sulang.Wpf.Controls.Dialogs
 {
     /// <summary>
-    /// 关于对话框事件数据
+    /// 对话框弹出事件数据
     /// </summary>
-    public sealed class AboutDialogOpenEventData : EventData
+    public abstract class DialogPopEventData : CallbackEventData<bool>
     {
     }
 }

@@ -72,7 +72,7 @@
             <Frame Source="pack://application:,,,/Sulang.Modules.Kernel.View;component/Home/HomePage.xaml"></Frame>
         </DockPanel>
         <!--关于-->
-        <clg:ContentDialog Title="关于 ..." Visibility="{Binding Data.AboudDialog.Visibility, Mode=TwoWay}">
+        <clg:ContentDialog Title="关于 ..." Visibility="{Binding Data.AboutDialog.Visibility, Mode=TwoWay}" Command="{Binding Service.OnAboutDialogCommand}">
             <cg:About></cg:About>
         </clg:ContentDialog>
         <!--代码框-->

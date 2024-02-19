@@ -22,7 +22,7 @@ namespace Sulang.Modules.Kernel.View.MainWindow
         public MainWindowData()
         {
             Pages = [];
-            AboudDialog = new DialogData();
+            AboutDialog = new DialogData();
         }
 
         #region 对话框
@@ -30,7 +30,7 @@ namespace Sulang.Modules.Kernel.View.MainWindow
         /// <summary>
         /// 关于对话框
         /// </summary>
-        public DialogData AboudDialog { get; }
+        public DialogData AboutDialog { get; }
 
         #endregion
 

@@ -1,4 +1,4 @@
-﻿using Sulang.Infrastructure.Events;
+﻿using Sulang.Infrastructure.Events.Datas;
 
 namespace Sulang.Modules.Kernel.Core.Home.Events
 {
