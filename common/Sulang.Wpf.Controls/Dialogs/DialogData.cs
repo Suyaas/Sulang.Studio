@@ -11,7 +11,7 @@ namespace Sulang.Wpf.Common.Dialogs
     /// <summary>
     /// 对话框数据
     /// </summary>
-    public sealed class DialogData : ViewModelData
+    public class DialogData : ViewModelData
     {
         #region 可见性
 

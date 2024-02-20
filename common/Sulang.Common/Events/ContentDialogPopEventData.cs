@@ -8,13 +8,17 @@ using System.Threading.Tasks;
 namespace Sulang.Wpf.Controls.Dialogs
 {
     /// <summary>
-    /// 对话框弹出事件数据
+    /// 内容对话框弹出事件数据
     /// </summary>
-    public abstract class DialogPopEventData : CallbackEventData<bool>
+    public abstract class ContentDialogPopEventData : DialogPopEventData
     {
         /// <summary>
-        /// 标题
+        /// 宽度
         /// </summary>
-        public string Title { get; set; } = string.Empty;
+        public int Width { get; set; }
+        /// <summary>
+        /// 高度
+        /// </summary>
+        public int Height { get; set; }
     }
 }

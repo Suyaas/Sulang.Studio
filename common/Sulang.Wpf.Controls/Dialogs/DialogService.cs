@@ -12,13 +12,14 @@ namespace Sulang.Wpf.Controls.Dialogs
     /// <summary>
     /// 对话框服务
     /// </summary>
-    public sealed class DialogService : ViewModelService<DialogData>
+    public sealed class DialogService<T> : ViewModelService<T>
+        where T : DialogData, new()
     {
         /// <summary>
         /// 对话框服务
         /// </summary>
         /// <param name="data"></param>
-        public DialogService(DialogData data)
+        public DialogService(T data)
         {
             this.Data = data;
         }

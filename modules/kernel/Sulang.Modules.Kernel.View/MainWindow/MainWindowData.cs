@@ -22,15 +22,15 @@ namespace Sulang.Modules.Kernel.View.MainWindow
         public MainWindowData()
         {
             Pages = [];
-            AboutDialog = new DialogData();
+            Dialog = new ContentDialogData();
         }
 
         #region 对话框
 
         /// <summary>
-        /// 关于对话框
+        /// 对话框
         /// </summary>
-        public DialogData AboutDialog { get; }
+        public ContentDialogData Dialog { get; }
 
         #endregion
 

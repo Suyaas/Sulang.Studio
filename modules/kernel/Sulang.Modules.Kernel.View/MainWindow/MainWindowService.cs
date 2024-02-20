@@ -2,6 +2,8 @@
 using Sulang.Modules.Kernel.Core.MainWindow.Events;
 using Sulang.Native.Win32;
 using Sulang.Wpf.Common.Commands;
+using Sulang.Wpf.Common.Dialogs;
+using Sulang.Wpf.Common.Pages;
 using Sulang.Wpf.Controls.Dialogs;
 using Sulang.Wpf.Infrastructure.ViewModels;
 using Suyaa;
@@ -18,7 +20,7 @@ namespace Sulang.Modules.Kernel.View.MainWindow
     public sealed class MainWindowService : ViewModelService<MainWindowData>
     {
         // 对话框
-        private readonly DialogService _aboutDialog;
+        private readonly DialogService<ContentDialogData> _dialog;
         private readonly IEventBus _eventBus;
         private AboutDialogPopEventData? _aboutDialogPopEventData = null;
 
@@ -30,19 +32,24 @@ namespace Sulang.Modules.Kernel.View.MainWindow
             )
         {
             Data.WindowText = Use<Assembly>.Toy.GetProductFullName();
-            _aboutDialog = new DialogService(Data.AboutDialog);
+            _dialog = new DialogService<ContentDialogData>(Data.Dialog);
             _eventBus = eventBus;
+            // 订阅关于对话框事件
             _eventBus.Subscribe<AboutDialogPopEventData>(d =>
             {
                 _aboutDialogPopEventData = d;
-                _aboutDialog.Show();
+                _dialog.Data.Title = d.Title;
+                _dialog.Data.Width = d.Width;
+                _dialog.Data.Height = d.Height;
+                _dialog.Data.Content = FrameHelper.CreateFromDynamicPage(d.Url, null);
+                _dialog.Show();
             });
         }
 
         /// <summary>
         /// 关于对话框命令
         /// </summary>
-        public RelayCommand OnAboutDialogCommand => new(e =>
+        public RelayCommand OnDialogCommand => new(e =>
         {
             _aboutDialogPopEventData?.Callback?.Invoke(e.Name == DialogCommands.Confirm);
         });

@@ -12,7 +12,7 @@ namespace Sulang.Modules.Kernel.Core.MainWindow.Events
     /// <summary>
     /// 关于对话框弹出事件数据
     /// </summary>
-    public sealed class AboutDialogPopEventData : DialogPopEventData
+    public sealed class AboutDialogPopEventData : PageDialogPopEventData
     {
         /// <summary>
         /// 关于对话框事件数据
@@ -21,6 +21,10 @@ namespace Sulang.Modules.Kernel.Core.MainWindow.Events
         public AboutDialogPopEventData(Action<bool>? callback)
         {
             this.Callback = callback;
+            this.Url = "pack://application:,,,/Sulang.Modules.Kernel.View;component/About/AboutPage.xaml";
+            this.Width = 400;
+            this.Height = 200;
+            this.Title = "关于 ...";
         }
     }
 }
